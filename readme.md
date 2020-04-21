@@ -39,3 +39,18 @@ Werkzeug==1.0.0
 python manage.py runserver 127.0.0.1:8008 --insecure
 ```
 
+
+# model
+you need to download the model weight if you want to run the model.
+### yolov3
+link: https://drive.google.com/open?id=14hdXY8AJugvSHlTagZYjLJ8h8989UTC1
+path: models/darknet/backup/food/yolov3-food_final.weights  
+
+### xception
+link: https://drive.google.com/open?id=12VfIb4q5CCC_V5PC8V4hFKQNrs7x11o1  
+path: models/classification/models/xception-0-15-0.82.h5
+
+### food231
+link: https://drive.google.com/open?id=11oVuB4muzv-VlVEeJraBsG7g0-GxHDXQ
+path: models/classification/class_index/food231.npy
+
