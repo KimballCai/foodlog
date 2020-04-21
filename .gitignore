@@ -1,0 +1,5 @@
+models/classification/class_index/food231.npy
+models/classification/models/xception-0-15-0.82.h5
+models/darknet/backup/food/yolov3-food_final.weights
+media/food/*
+media/result/*

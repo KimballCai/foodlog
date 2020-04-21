@@ -1,0 +1,565 @@
+﻿{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>SIFT | Home</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="SIFT Bootstrap 4x admin is super flexible, powerful, clean &amp; modern responsive admin dashboard with unlimited possibilities.">
+<meta name="author" content="GetBootstrap, design by: puffintheme.com">
+
+<link rel="icon" href="{% static "favicon.png" %}"  type="image/x-icon">
+<!-- VENDOR CSS -->
+<link rel="stylesheet" href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/font-awesome/css/font-awesome.min.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/animate-css/vivify.min.css" %}" >
+
+<link rel="stylesheet" href="{% static "assets/vendor/c3/c3.min.css" %}" />
+<link rel="stylesheet" href="{% static "assets/vendor/chartist/css/chartist.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/toastr/toastr.min.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/jvectormap/jquery-jvectormap-2.0.3.css" %}" />
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="{% static "assets/css/site.css" %}" >
+
+</head>
+<body class="theme-blush">
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img src="{% static "assets/images/icon.svg" %}" width="40" height="40" alt="SIFT"></div>
+        <p>Please wait...</p>        
+    </div>
+</div>
+
+<!-- Theme Setting -->
+<div class="themesetting">
+    <a href="#" class="theme_btn"><i class="icon-magic-wand"></i></a>
+    <ul class="choose-skin list-unstyled mb-0">
+        <li data-theme="green"><div class="green"></div></li>
+        <li data-theme="orange"><div class="orange"></div></li>
+        <li data-theme="blush" class="active"><div class="blush"></div></li>
+        <li data-theme="cyan"><div class="cyan"></div></li>
+    </ul>
+</div>
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<div id="wrapper">
+
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-left">
+                <div class="navbar-btn">
+                    <a href="index.html"><img src="{% static " assets/images/icon.svg" %}" alt="SIFT Logo" class="img-fluid logo"></a>
+                    <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
+                </div>
+                <form id="navbar-search" class="navbar-form search-form">
+                    <input value="" class="form-control" placeholder="Search here..." type="text">
+                    <button type="button" class="btn btn-default"><i class="icon-magnifier"></i></button>
+                </form>
+            </div>
+            
+            <div class="navbar-right">
+                <div id="navbar-menu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Mega Menu">Setting</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                                <i class="icon-bell"></i>
+                                <span class="notification-dot bg-azura">2</span>
+                            </a>
+                            <ul class="dropdown-menu feeds_widget vivify fadeIn">
+                                <li class="header">You have 2 New Notifications</li>
+                                <li>
+                                    <a href="#">
+                                        <div class="feeds-left bg-red"><i class="fa fa-times-circle-o"></i></div>
+                                        <div class="feeds-body">
+                                            <h4 class="title text-danger">Running Goal <small class="float-right text-muted">3:10 PM</small></h4>
+                                            <small>Please have more execerise today</small>
+                                        </div>
+                                    </a>
+                                </li>                               
+                                <li>
+                                    <a href="#">
+                                        <div class="feeds-left bg-orange"><i class="fa fa-question-circle"></i></div>
+                                        <div class="feeds-body">
+                                            <h4 class="title text-warning">Fats Exceed <small class="float-right text-muted">9:17 AM</small></h4>
+                                            <small>You gain too much fats today</small>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="/logout/" class="icon-menu"><i class="icon-power"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="megamenu" class="megamenu particles_js">
+        <button class="megamenu_toggle btn btn-danger"><i class="icon-close"></i></button>
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="mega-card">
+                        <h6 class="title">General Settings</h6>
+                        <ul class="setting-list list-unstyled mb-0">
+                            <li>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <span>Allow Permission from Mobilephone</span>
+                            </li>
+                            <li>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <span>Notifications</span>
+                            </li>
+                            <li>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <span>Auto Updates</span>
+                            </li>
+                            <li>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <span>Offline</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="mega-card">
+                        <h6 class="title">Quick Link</h6>
+                        <ul class="guick_link">
+                            <li><a href="index.html" title="">Home</a></li>
+                            <li><a href="#" title="">Quick Start</a></li>
+                            <li><a href="#" title="">FAQs</a></li>
+                            <li><a href="#" title="">Profile</a></li>
+                            <li><a href="#" title="">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="mega-card">
+                        <h6 class="title">Contact Us</h6>
+                        <form>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" placeholder="Enter Name">
+                            </div>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" placeholder="Enter Email">
+                            </div>
+                            <div class="input-group mb-2">
+                                <textarea  class="form-control" placeholder="Message" rows="2"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-round">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="mega-card">
+                        <h6 class="title">Image Gallery</h6>
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="{% static "assets/images/food/cabbage.jpg" %}" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="{% static "assets/images/food/shrimp.jpg" %}" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="{% static "assets/images/food/pork.jpg" %}" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="card mt-4">
+                    <div class="header">
+                        <h2>FAQs</h2>
+                        <ul class="header-dropdown dropdown">                                
+                            <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="accordion" id="accordion-faqs">
+                            <div>
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne-faqs" aria-expanded="true" aria-controls="collapseOne">
+                                        Q: How to use this platform? <span class="float-right badge  badge-primary">1</span>
+                                        </button>
+                                    </h5>
+                                </div>                                
+                                <div id="collapseOne-faqs" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-faqs">
+                                    <div class="card-body">
+                                        Click the "scan food" in left sidebar, and start to use it.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo-faqs" aria-expanded="false" aria-controls="collapseTwo">
+                                        Q: What this platform used for? <span class="float-right badge  badge-success">2</span>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo-faqs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-faqs">
+                                    <div class="card-body">
+                                        To detect your food everyday atomatically, aiming to help you managing your figure.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree-faqs" aria-expanded="false" aria-controls="collapseThree">
+                                    Q: Why can't I get step number? <span class="float-right badge  badge-danger">3</span>
+                                    </button>
+                                </h5>
+                                </div>
+                                <div id="collapseThree-faqs" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faqs">
+                                    <div class="card-body">
+                                        Please give the permission to our application.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="particles-js"></div>
+    </div>
+
+    <div id="left-sidebar" class="sidebar">
+        <div class="navbar-brand">
+            <a href="index.html"><img src="{% static "assets/images/icon.svg" %}" alt="SIFT Logo" class="img-fluid logo"><span>SIFT</span></a>
+            <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu fa fa-chevron-circle-left"></i></button>
+        </div>
+        <div class="sidebar-scroll">
+            <div class="user-account">
+                <div class="user_div">
+                    <img src="{% static "assets/images/user.svg" %}" class="user-photo" alt="User Profile Picture">
+                </div>
+                <div class="dropdown">
+                    <span>Welcome</span>
+                    <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{ name }}</strong></a>
+                    <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
+                        <li><a href="page-profile.html"><i class="icon-user"></i>My Profile</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/logout/"><i class="icon-power"></i>Logout</a></li>
+                    </ul>
+                </div>
+                <a href="/scan/">
+                <button class="btn btn-sm btn-block btn-primary btn-round mt-3" title="" οnclick="window.open('http://www.baidu.com')"><i class="icon-plus mr-1"></i> New Scan</button>
+                </a>
+            </div>  
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul id="main-menu" class="metismenu">
+                    <li class="header">Main</li>
+                    <li class="active"><a href="/index"><i class="icon-speedometer"></i> <span>Overview</span></a></li>
+                    <li><a href="/scan/"><i class="icon-camera"></i> <span>Scan Food</span></a></li>
+                    <li class="">
+                        <a href="#Report" class="has-arrow"><i class="icon-docs"></i><span>Report</span></a>
+                        <ul>
+                            <li class=""><a href="yesterday-report.html">Yesterday Report</a></li>
+                            <li class=""><a href="weekly-report.html">Weekly Report</a></li>
+                            <li class=""><a href="yearly-report.html">Yearly Report</a></li>
+                        </ul>
+                    </li>
+                    <li class="header">Basic</li>
+                    <li><a href="adjust-goal.html"><i class="icon-rocket"></i> <span>Adjust Goal</span></a></li>
+                    <li><a href="page-profile.html"><i class="icon-heart"></i> <span>Update Info</span></a></li>
+                    
+                   
+                </ul>
+            </nav>     
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="block-header">
+            <div class="row clearfix">
+                <div class="col-md-6 col-sm-12">
+                    <h1>Overview</h1>
+                </div>            
+                <div class="col-md-6 col-sm-12 text-right">
+                    <div class="inlineblock vivify swoopInTop delay-950 mr-4">Goal <span id="mini-bar-chart2" class="mini-bar-chart"></span></div>
+                    <div class="inlineblock vivify swoopInTop delay-1000">Current <span id="mini-bar-chart3" class="mini-bar-chart"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="slider3" class="carousel vert slide" data-ride="carousel" data-interval="1700">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="card-value float-right text-muted"><i class="wi wi-fog"></i></div>
+                                                <h3 class="mb-1">32°C</h3>
+                                                <div>Singapore</div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="card-value float-right text-muted"><i class="wi wi-day-cloudy"></i></div>
+                                                <h3 class="mb-1">18°C</h3>
+                                                <div>HongKong</div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="card-value float-right text-muted"><i class="wi wi-sunrise"></i></div>
+                                                <h3 class="mb-1">1°C</h3>
+                                                <div>Beijing</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-value float-right text-muted"><i class="icon-cup"></i></div>
+                                    <h3 class="mb-1">1400</h3>
+                                    <div>KCalories Ingested</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-value float-right text-muted"><i class=" icon-fire"></i></div>
+                                    <h3 class="mb-1">900</h3>
+                                    <div>KCalories Burned</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>What I Have Eat Today</h2>
+                        </div>
+                        <div class="body">
+                            <ul class="right_chat w_followers list-unstyled mb-0">
+                                <li class="online">
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object " src="{% static "assets/images/food/soup.jpg" %}" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Soup</span>
+                                                <span class="message">9:30, AM</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="online">
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object " src="{% static "assets/images/food/bread.jpg" %}" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Bread</span>
+                                                <span class="message">9:34, AM</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                                <li class="offline">
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object " src="{% static "assets/images/food/chiken.jpg" %}" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Chiken</span>
+                                                <span class="message">12:40, PM</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="offline">
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object " src="{% static "assets/images/food/shrimp.jpg" %}" alt="">
+                                            <div class="media-body">
+                                                <span class="name">shrimp</span>
+                                                <span class="message">12:41, PM</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="online">
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object " src="{% static "assets/images/food/cabbage.jpg" %}" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Cabbage</span>
+                                                <span class="message">6:20, PM</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="offline">
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object " src="{% static "assets/images/food/pork.jpg" %}" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Pork</span>
+                                                <span class="message">6:20, PM</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-8">
+                    <div class="table-responsive">
+                        <table class="table header-border table-hover table-custom spacing5">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nutrition</th>
+                                    <th>Compared to Avg.</th>
+                                    <th>Absorb</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="w60">1</th>
+                                    <td>Carbohydrates</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-primary">77%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Proteins</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-success">90%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Fats</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-dark">120%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Minerals</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 37%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-danger">30%</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr>
+                    <h6>Walking Goal</h6>
+                    <div id="progress-striped" class="progress progress-striped">
+                        <div class="progress-bar progress-bar-warning" data-transitiongoal="43"></div>
+                    </div>
+                    <p>
+                    <h6>Running Goal</h6>
+                    <div id="progress-striped" class="progress progress-striped">
+                        <div class="progress-bar progress-bar-danger" data-transitiongoal="15"></div>
+                    </div>
+                    <p>
+                    <h6>Standing Goal</h6>
+                    <div id="progress-striped" class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" data-transitiongoal="100"></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+
+<!-- Javascript -->
+<script src="{% static "assets/bundles/libscripts.bundle.js" %}"></script>
+<script src="{% static "assets/bundles/vendorscripts.bundle.js" %}"></script>
+
+<script src="{% static "assets/bundles/jvectormap.bundle.js" %}"></script>
+<script src="{% static "assets/vendor/toastr/toastr.js" %}"></script>
+
+<script src="{% static "assets/bundles/mainscripts.bundle.js" %}"></script>
+<script src="{% static "assets/js/index.js" %}"></script>
+<script>
+    $(function() {
+        $('#progress-striped .progress-bar, #progress-striped-active .progress-bar, #progress-stacked .progress-bar').progressbar({
+            display_text: 'fill'
+        });
+    });
+</script>
+</body>
+</html>

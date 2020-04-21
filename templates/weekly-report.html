@@ -1,0 +1,77 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Week
+{% endblock %}
+
+{% block add_js %}
+<link rel="stylesheet" href="{% static "assets/vendor/c3/c3.min.css" %}"/>
+{% endblock %}
+
+{% block sub_title %}
+    Week Report ({{ start }} to {{ end }})
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+
+            <div class="row row-cards">
+                <div class="col-xl-8 col-lg-7 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Achievement of sports goals (%)</h2>
+                        </div>
+                        <div class="body">
+                            <div id="chart-employment" style="height: 300px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Nutrition Balance in Last Week</h2>
+                        </div>
+                        <div class="body">
+                            <div id="chart-pie" style="height: 300px"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Nutrition Ingested Every Day (KCal.)</h2>
+                        </div>
+                        <div class="body">
+                            <div id="chart-bar" style="height: 300px"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+{% endblock %}
+
+{% block tail_js %}
+
+<!-- Javascript -->
+<script src="{% static "assets/bundles/libscripts.bundle.js" %}"></script>
+<script src="{% static "assets/bundles/vendorscripts.bundle.js" %}"></script>
+
+<script src="{% static "assets/bundles/c3.bundle.js" %}"></script>
+<script src="{% static "assets/bundles/mainscripts.bundle.js" %}"></script>
+<script src="{% static "assets/js/pages/charts/c3.js" %}"></script>
+
+<script>
+    $(function() {
+        $('#progress-striped .progress-bar, #progress-striped-active .progress-bar, #progress-stacked .progress-bar').progressbar({
+            display_text: 'fill'
+        });
+    });
+</script>
+
+{% endblock %}
+
+

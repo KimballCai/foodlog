@@ -1,0 +1,35 @@
+{#{% load staticfiles %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+</head>
+<body>
+
+<h1>{{ hello }}</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="img">
+    <button type="submit">上传</button>
+</form>
+
+{% if img_url %}
+     <img src="{{ img_url }}" />
+{% endif %}
+{% if result_url %}
+     <img src="{{ result_url }}" />
+{% endif %}
+
+{% for box in boxes %}
+    <h1>{{ box.index }}</h1>
+    <h2>{{ box.food_class }} : {{ box.prob }}</h2>
+    <h3>left: {{ box.left }}</h3>
+    <h3>upper: {{ box.upper }}</h3>
+    <h3>right: {{ box.right }}</h3>
+    <h3>down: {{ box.down }}</h3>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block add_js %}
+<link rel="stylesheet" href="{% static "assets/vendor/c3/c3.min.css" %}" />
+<link rel="stylesheet" href="{% static "assets/vendor/chartist/css/chartist.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/toastr/toastr.min.css" %}" >
+<link rel="stylesheet" href="{% static "assets/vendor/jvectormap/jquery-jvectormap-2.0.3.css" %}" />
+{% endblock %}
+
+{% block sub_title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="slider3" class="carousel vert slide" data-ride="carousel" data-interval="1700">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="card-value float-right text-muted"><i class="wi wi-fog"></i></div>
+                                                <h3 class="mb-1">32°C</h3>
+                                                <div>Singapore</div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="card-value float-right text-muted"><i class="wi wi-day-cloudy"></i></div>
+                                                <h3 class="mb-1">18°C</h3>
+                                                <div>HongKong</div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="card-value float-right text-muted"><i class="wi wi-sunrise"></i></div>
+                                                <h3 class="mb-1">1°C</h3>
+                                                <div>Beijing</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-value float-right text-muted"><i class="icon-cup"></i></div>
+                                    <h3 class="mb-1">1400</h3>
+                                    <div>KCalories Ingested</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-value float-right text-muted"><i class=" icon-fire"></i></div>
+                                    <h3 class="mb-1">900</h3>
+                                    <div>KCalories Burned</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>What I Have Eat Today</h2>
+                        </div>
+                        <div class="body">
+                            <ul class="right_chat w_followers list-unstyled mb-0">
+                                {% for food in food_list %}
+                                <li class="online">
+                                    <a href="/single-report/?index={{ food.index }}" >
+                                        <div class="media">
+                                            <img class="media-object " src="{{ food.img_url }}" alt="">
+                                            <div class="media-body">
+                                                <span class="name">{{ food.name }}</span>
+                                                <span class="message">{{ food.upload_time }}</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                {% endfor %}
+{#                                <li class="offline">#}
+{#                                    <a href="javascript:void(0);">#}
+{#                                        <div class="media">#}
+{#                                            <img class="media-object " src="{% static "assets/images/food/pork.jpg" %}" alt="">#}
+{#                                            <div class="media-body">#}
+{#                                                <span class="name">Pork</span>#}
+{#                                                <span class="message">6:20, PM</span>#}
+{#                                                <span class="badge badge-outline status"></span>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </li>#}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-8">
+                    <div class="table-responsive">
+                        <table class="table header-border table-hover table-custom spacing5">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nutrition</th>
+                                    <th>Compared to Avg.</th>
+                                    <th>Absorb</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="w60">1</th>
+                                    <td>Carbohydrates</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="{{ Carbohydrates }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ Carbohydrates }}%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-primary">{{ Carbohydrates }}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Proteins</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ Proteins }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ Proteins }}%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-success">{{ Proteins }}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Fats</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ Fats }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ Fats }}%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-dark">{{ Fats }}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Minerals</td>
+                                    <td>
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ Minerals }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ Minerals }}%;"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-danger">{{ Minerals }}</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr>
+                    <h6>Walking Goal</h6>
+                    <div id="progress-striped" class="progress progress-striped">
+                        <div class="progress-bar progress-bar-warning" data-transitiongoal="43"></div>
+                    </div>
+                    <p>
+                    <h6>Running Goal</h6>
+                    <div id="progress-striped" class="progress progress-striped">
+                        <div class="progress-bar progress-bar-danger" data-transitiongoal="15"></div>
+                    </div>
+                    <p>
+                    <h6>Standing Goal</h6>
+                    <div id="progress-striped" class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" data-transitiongoal="100"></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+{% endblock %}
+
+{% block tail_js %}
+
+<!-- Javascript -->
+<script src="{% static "assets/bundles/libscripts.bundle.js" %}"></script>
+<script src="{% static "assets/bundles/vendorscripts.bundle.js" %}"></script>
+
+<script src="{% static "assets/bundles/jvectormap.bundle.js" %}"></script>
+<script src="{% static "assets/vendor/toastr/toastr.js" %}"></script>
+
+<script src="{% static "assets/bundles/mainscripts.bundle.js" %}"></script>
+<script src="{% static "assets/js/index.js" %}"></script>
+<script>
+    $(function() {
+        $('#progress-striped .progress-bar, #progress-striped-active .progress-bar, #progress-stacked .progress-bar').progressbar({
+            display_text: 'fill'
+        });
+    });
+</script>
+
+{% endblock %}
