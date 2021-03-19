@@ -16,7 +16,7 @@ mkl-random==1.1.0
 mkl-service==2.3.0
 numpy==1.18.1
 olefile==0.46
-Pillow==7.0.0
+Pillow==8.1.1
 protobuf==3.11.3
 pytz==2019.3
 PyYAML==5.3
