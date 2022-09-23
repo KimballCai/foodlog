@@ -17,7 +17,7 @@ mkl-service==2.3.0
 numpy==1.18.1
 olefile==0.46
 Pillow==7.0.0
-protobuf==3.11.3
+protobuf==3.18.3
 pytz==2019.3
 PyYAML==5.3
 scipy==1.4.1
